@@ -96,3 +96,25 @@ class DisplayTimer extends Component {
   }
 }
 export default connect(state => { return state })(Dashboard)
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyB2JV_Kx8SG20plQJkdv5RpVMivOI_JveU",
+//   authDomain: "yeoptest-61707.firebaseapp.com",
+//   projectId: "yeoptest-61707",
+//   storageBucket: "yeoptest-61707.appspot.com",
+//   messagingSenderId: "212364266087",
+//   appId: "1:212364266087:web:e61c47291eeb3031a622c2",
+//   measurementId: "G-VFNV9S454L"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
