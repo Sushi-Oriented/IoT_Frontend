@@ -36,7 +36,6 @@
     "canvasjs": "^1.8.3",
     "canvasjs-react-charts": "^1.0.5",
     "chart.js": "^2.9.4",
-    "chartjs-plugin-streaming": "^2.0.0",
     "classnames": "^2.2.6",
     "core-js": "^3.8.3",
     "date-fns": "^2.16.1",
