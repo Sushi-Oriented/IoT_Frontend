@@ -1,0 +1,6 @@
+{
+    "name": "paging_button",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./PagingButton.js"
+}

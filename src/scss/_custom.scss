@@ -1,0 +1,335 @@
+// Here you can add other styles
+.bodybackg {
+    background-color: #ffffff;
+}
+
+// ----- LOGIN PAGE ----- //
+
+.login-bg {
+    background: rgba(255, 255, 255, 0.75);
+    background-size: cover;
+}
+.login-bg-eff {
+    background: rgba(255, 255, 255, 0.75);
+    // background: linear-gradient(-45deg, rgba(144, 209, 207, 0.9), rgba(0, 161, 156, 0.7), rgba(0, 85, 85, 0.9));
+	background-size: 200% 200%;
+	-webkit-animation: Gradient 5s ease infinite;
+	-moz-animation: Gradient 5s ease infinite;
+	animation: Gradient 5s ease infinite;
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+// ----- End Login Pge -----//
+
+.bg-light-grey {
+    color: #333;
+    background: #e4e5e6;
+}
+.bg-grey {
+    color: #333;
+    background: #c3c3c3;
+}
+.bg-trans {
+    background: transparent !important;
+}
+.bg-ldark {
+    background: #444444;
+    color: #ffffff;
+}
+.bg-p {
+    background: #3e3935;
+    color: #ffffff;
+}
+
+.app-header .navbar-brand {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.navbar {
+    padding: 0 !important;
+}
+
+.breadcrumb {
+    background-color: #f1f1f1;
+}
+
+.app-footer {
+    background-color: #f1f1f1;
+}
+
+.nav-dropdown-items .nav-item a {
+    padding-left: 2.5rem;
+    border-left: 5px $primary solid !important;
+}
+
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.text-p {
+    color: #3e3935;
+}
+
+.hover-shadow {
+    transition: all ease-in-out $layout-transition-speed;
+}
+.hover-shadow:hover {
+    filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.45));
+}
+
+.hover-opa {
+    opacity: 0.7;
+    transition: all ease-in-out $layout-transition-speed;
+}
+.hover-opa:hover {
+    opacity: 1;
+}
+.hover-opa-r {
+    opacity: 1;
+    transition: all ease-in-out $layout-transition-speed;
+}
+.hover-opa-r:hover {
+    opacity: 0.7;
+}
+.hover-scale {
+    transform: scale(1);
+    transition: all ease-in-out $layout-transition-speed;
+}
+.hover-scale:hover {
+    transform: scale(1.1);
+}
+  
+@keyframes blinker {
+    50% {
+         opacity: 0;
+    }
+}
+
+.blink-it {
+    animation: blinker 1s linear infinite;
+}
+.blink-it:hover {
+    animation: none;
+}
+
+.opacity-70 {
+    opacity: 0.7;
+}
+
+.skew-x {
+    -ms-transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
+}
+
+.w-90 {
+    width: 90%;
+}
+.h-90 {
+    height: 90%;
+}
+.h-88 {
+    height: 88%;
+}
+
+.sm-box {
+    width: 50px;
+    transition: all ease-in-out $layout-transition-speed;
+    background: 
+        // linear-gradient(
+        //     135deg,
+        //     rgba(255, 255, 255, 0.2),
+        //     rgba(255, 255, 255, 0.2) 10px,
+        //     rgba(255, 255, 255, 0.3) 10px,
+        //     rgba(255, 255, 255, 0.3) 20px
+        // )
+        linear-gradient(335deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.1) 49.92%, rgba(0,0,0,0.1) 50%);
+}
+
+.border-l-2 {
+    border-left: 2px #bbb outset;
+}
+
+.table-pgn ul {
+    margin-bottom: 0;
+}
+
+.border-w-2 {
+    border-width: 2px !important;
+}
+
+.card-footer {
+    background-color: #f1f1f1;
+}
+
+.mid-card-cont {
+    width: 95%;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #e4e5e6;
+    font-family: "poppins";
+    font-size: 1rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    display: flex;
+    transition: all ease-in-out $layout-transition-speed;
+    cursor: pointer;
+}
+.mid-card-cont:hover {
+    filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.2));
+    opacity: 0.9;
+}
+
+.mid-card-title {
+    flex: 2;
+    padding: 8px;
+    text-align: center;
+}
+.mid-card-value {
+    flex: 1;
+    background: #333;
+    color: #ffffff;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mini-card {
+    width: 100%;
+    margin: auto;
+    background-color: #ffffff;
+    font-family: "poppins";
+    font-size: 0.7rem;
+    overflow: hidden;
+}
+
+a .hover-red {
+    color: $dark;
+}
+
+a .hover-red:hover {
+    color: $danger;
+}
+
+.radius-30 {
+    border-radius: 30px;
+}
+.radius-l-30 {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+
+.table-col-head {
+    background-color: #dddddd;
+    font-family: "poppins";
+    font-size: 0.8rem;
+    padding: 0.6rem 0.3rem !important;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+.table-striped tbody tr:nth-of-type(odd):hover {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.rbt-input-hint-container .form-control {
+    border-radius: 15px !important;
+    padding-left: 0.7rem;
+}
+.rbt-input-hint-container .form-control-sm {
+    height: calc(2.0625rem + 2px);
+}
+
+.progress {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+    width: fit-content;
+    margin: auto;
+}
+
+.speedometer .current-value {
+    display: none;
+}
+
+.dark-btn {
+    background-color: #111111;
+    border-color: #111111;
+    color: #999999;
+}
+.filter-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.3);
+}
+
+.react-bootstrap-table tr {
+    cursor: pointer;
+}
+.react-bootstrap-table .align-middle td, .react-bootstrap-table .align-middle th {
+    vertical-align: middle;
+}
+.table-img-cont {
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: auto;
+    filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.1));
+}
+
+.graph-control-prev, .graph-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4%;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+    -webkit-transition: opacity 0.15s ease;
+    transition: opacity 0.15s ease;
+}
+.graph-control-prev {
+    left: 0;
+}
+.graph-control-next {
+    right: 0;
+}
+.graph-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+}
+.graph-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+}
+.graph-control-prev:hover, .graph-control-prev:focus, .graph-control-next:hover, .graph-control-next:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: 0.9;
+}

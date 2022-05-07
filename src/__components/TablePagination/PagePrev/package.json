@@ -1,0 +1,6 @@
+{
+    "name": "page_prev",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./PagePrev.js"
+}

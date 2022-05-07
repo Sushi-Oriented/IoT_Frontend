@@ -1,0 +1,6 @@
+{
+    "name": "table_pagination",
+    "version": "0.0.0",
+    "private": true,
+    "main": "./TablePagination.js"
+}

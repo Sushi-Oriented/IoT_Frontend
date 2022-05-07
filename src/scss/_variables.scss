@@ -1,0 +1,38 @@
+// Variable overrides
+
+$primary:                            #DA341A;
+$info:                               #FF5A1E;
+$dark:                               #333333;
+
+$gray-300:                           #cfcfcf; // lighten($gray-base, 70%);
+$gray-400:                           #acbbbc; // lighten($gray-base, 60%);
+$gray-500:                           #8fa5a6; // lighten($gray-base, 50%);
+$gray-600:                           #757c7c; // lighten($gray-base, 40%);
+$gray-700:                           #5c7373; // lighten($gray-base, 30%);
+$gray-800:                           #2f3a3a;
+$gray-900:                           #3e3935; //DARK components
+
+// Costum Colors
+
+$body-bg:                            #e4e5e6;
+$gray-body:                          #e4e5e6;
+$table-dark-bg:                      #444444;
+
+// Custom Styles
+
+$navbar-height:                       70px;
+$navbar-brand-width:                  210px;
+$navbar-brand-minimized-width:        60px;
+
+$sidebar-width:                       250px;
+$sidebar-minimized-width:             60px;
+$sidebar-bg:                         #333333;
+$sidebar-nav-title-padding-y:         1rem;
+$sidebar-nav-title-padding-x:         1.5rem;
+$sidebar-nav-link-padding-y:          1rem;
+$sidebar-nav-link-padding-x:          1.5rem;
+$sidebar-nav-link-hover-bg:           $primary;
+$sidebar-nav-link-hover-icon-color:   #fff;
+$sidebar-nav-link-active-bg:          lighten($sidebar-bg, 5%);
+$sidebar-nav-link-active-icon-color:  $primary;
+
