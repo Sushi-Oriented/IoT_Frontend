@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import RealTimeLineChart from '../../__components/Chart/realTimeLineChart.js';
+import RealTimeTempChart from '../../__components/Chart/realTimeTempChart.js';
+import RealTimeHumidityChart from '../../__components/Chart/realTimeHumidityChart.js';
 import BarChart from '../../__components/Chart/BarChart.js';
 import LineChart from '../../__components/Chart/LineChart.js';
+
+import { initializeApp } from 'firebase/app';
+import { getDatabase } from "firebase/database";
+import { getAnalytics } from "firebase/analytics";
 
 
 // import { Line } from 'react-chartjs-2';
@@ -15,8 +20,14 @@ import {
   // Card,
   // CardBody,
   // CardTitle,
-  // Col,
-  // Row,
+  Col,
+  Row,
+  Input,
+  ListGroupItem,
+  FormGroup,
+  Label,
+  Card,
+  CardBody
 } from 'reactstrap';
 // import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 // import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
@@ -36,11 +47,29 @@ class Dashboard extends Component {
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
   state = {
-    date: new Date()
+    date: new Date(),
+
   }
 
+  constructor(props) {
+    super(props);
+
+    // this.onAddDeviceClick = this.onAddDeviceClick.bind(this);
+    this.onInputChange = this.onInputChange.bind(this);
+
+    this.state = {
+      temp: 40,
+      humi: 50,
+    };
+  }
   async componentDidMount() {
 
+  }
+
+  onInputChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+    console.log(name,value)
   }
 
   render() {
@@ -53,14 +82,53 @@ class Dashboard extends Component {
           {/* <MapContainer /> */}
         {/* </div>
         <div id="over_map"> */}
+        <Card>
+          <CardBody>
           <DisplayTimer />
+          <FormGroup row>
+                      <Label for="temp" style={{ color: "black" }} sm={3}>
+                        Temperature Alert (exceed)
+                      </Label>
+                      <Col sm={9}>
+                        <Input
+                          type="number"
+                          name="temp"
+                          // placeholder={this.state.temp}
+                          value={this.state.temp}
+                          onChange={this.onInputChange}
+                          required
+                        />
+                         <div style={{textAlign: 'left', marginLeft: '', color: 'red', fontSize: '10px'}}>{this.state.showMessageOwnerName && this.state.MessageOwnerName}</div>
+                      </Col>
+
+                    </FormGroup>
+                    <FormGroup row>
+                      <Label for="humi" style={{ color: "black" }} sm={3}>
+                        Humidity Alert (less then)
+                      </Label>
+                      <Col sm={9}>
+                        <Input
+                          type="number"
+                          name="humi"
+                          // placeholder={this.state.humi}
+                          value={this.state.humi}
+                          onChange={this.onInputChange}
+                          required
+                        />
+                         <div style={{textAlign: 'left', marginLeft: '', color: 'red', fontSize: '10px'}}>{this.state.showMessageOwnerName && this.state.MessageOwnerName}</div>
+                      </Col>
+
+                    </FormGroup>
 
         {/* </div> */}
-        <RealTimeLineChart/>
-        <LineChart/>
-
-        <BarChart/>
+        <RealTimeTempChart temp={this.state.temp}/>
+        <RealTimeHumidityChart humi={this.state.humi}/>
+        {/* <LineChart/>
+        <BarChart/> */}
       {/* </div> */}
+          </CardBody>
+        </Card>
+
 
       </>
     );
@@ -85,11 +153,23 @@ class DisplayTimer extends Component {
       dates: Dates.format(new Date(), Dates.FORMAT.DATE1),
     });
   }
+
   render() {
     return (
       <div>
-        <h1 className='mr-0 pl-5' style={{ color: '#000' }}>{this.state.timer}</h1>
+        <Row>
+          <Col sm={4}>
+          <h1 className='mr-0 pl-5' style={{ color: '#000' }}>{this.state.timer}</h1>
         <h3 className="pl-5" style={{ color: '#000' }}>{this.state.dates}</h3>
+          </Col>
+          <Col sm={8}>
+          {/* <ListGroupItem> */}
+
+                    {/* </ListGroupItem> */}
+          </Col>
+
+        </Row>
+
 
       </div>
     );

@@ -22,11 +22,12 @@ export const SERVER = {
             RegisterManager: API_ROUTE + '/AppUsers/register/manager',
             RegisterSupervisor: API_ROUTE + '/AppUsers/register/supervisor',
             RegisterNormalUser: API_ROUTE + '/AppUsers/register/normalUser',
-            
+
             ListAdmin: API_ROUTE + '/AppUsers/list/admins',
             ListManager: API_ROUTE + '/AppUsers/list/managers',
             ListSupervisor: API_ROUTE + '/AppUsers/list/supervisors',
             ListNormalUser: API_ROUTE + '/AppUsers/list/normalUsers',
+            ListUser: API_ROUTE + '/AppUsers/list/AllUsers',
 
             RemoveUser: (id) => { return API_ROUTE + '/AppUsers/remove/' + id },
             UpdateUser: (id) => { return API_ROUTE + '/AppUsers/update/' + id },

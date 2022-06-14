@@ -1,31 +1,43 @@
-import { CONSTANTS, IRequest, SERVER } from '../api';
+import { CONSTANTS, IRequest, SERVER, Auth } from '../api';
 
 export const UsersActions = {
     getListUser,
     registerUser,
     updateUser,
-    removeUser
+    deleteUser,
+    getPicture,
 };
 
-async function getListUser(dispatch) {
+async function getListUser(dispatches) {
     try {
-        let result = await IRequest.GetQuery(SERVER.API.AppUser.ListManager)
-        dispatch({ type: CONSTANTS.USER.LIST_SUCCESS, data: result })
+        let result = await IRequest.GetQuery(SERVER.API.AppUser.ListUser)
+        dispatches({ type: CONSTANTS.USER.LIST_SUCCESS, data: result })
+
     } catch (error) {
         console.log(error)
     }
 }
-async function registerUser(role, param) {
+async function registerUser(param) {
+    console.log(param)
     try {
-        let url = ''
-        if (role === CONSTANTS.ROLE.ADMIN) {
+        // if (
+        //     !(
+        //       Object.keys(param.pictureValue).length === 0 &&
+        //       param.pictureValue.constructor === Object
+        //     )
+        //   ) {
+        //     let picture = await IRequest.UploadFile(
+        //       SERVER.API.AppUser.UploadUserPicture,
+        //       param.pictureValue
+        //     );
+        //     param.picture = picture.result.files.file[0].name;
+        //   }
+          let url = ''
+          if(param.userRole === 'admin'){
             url = SERVER.API.AppUser.RegisterAdmin
-        }else if (role === CONSTANTS.ROLE.MANAGER) {
+        }
+        else if(param.userRole === 'manager'){
             url = SERVER.API.AppUser.RegisterManager
-        }else if (role === CONSTANTS.ROLE.SUPERVISOR) {
-            url = SERVER.API.AppUser.RegisterSupervisor
-        }else if (role === CONSTANTS.ROLE.NORMALUSER) {
-            url = SERVER.API.AppUser.RegisterNormalUser
         }
 
         let result = await IRequest.Post(url, param)
@@ -35,22 +47,42 @@ async function registerUser(role, param) {
         return Promise.reject(error)
     }
 }
-async function updateUser(userid, param) {
+async function updateUser(userid, param,pictureValue) {
+    console.log(userid,param,pictureValue)
     try {
-        // let result = await IRequest.Patch(SERVER.API.AppUser.UpdateById(userid), param)
-        let result = await IRequest.Post(SERVER.API.AppUser.UpdateUser(userid), param)
+
+        if (
+            !(
+              Object.keys(param.pictureValue).length === 0 &&
+              param.pictureValue.constructor === Object
+            )
+          ) {
+            let picture = await IRequest.UploadFile(
+              SERVER.API.AppUser.UploadUserPicture,
+              param.pictureValue
+            );
+            param.picture = picture.result.files.file[0].name;
+          }
+
+        let result = await IRequest.Post(SERVER.API.AppUser.UpdateById(userid), param)
+        console.log(result)
         return Promise.resolve(result)
     } catch (error) {
         // console.log(error)
         return Promise.reject(error)
     }
 }
-async function removeUser(userid) {
+
+async function deleteUser(id) {
     try {
-        let result = await IRequest.Delete(SERVER.API.AppUser.RemoveUser(userid))
+        console.log(id)
+        let result = await IRequest.Delete(SERVER.API.AppUser.RemoveUser(id))
         return Promise.resolve(result)
     } catch (error) {
-        // console.log(error)
         return Promise.reject(error)
     }
+}
+
+function getPicture(fileName) {
+    return SERVER.API.AppUser.GetUserPicture(fileName) + '?access_token=' + Auth.getAuthUserAccessToken()
 }
